@@ -54,7 +54,6 @@ public:
     char* GetName();
     int GetRace();
 
-
     void SetName(char* new_name);
     void SetRace(Breeds new_breed);
     string WhatDoesSay() override;
@@ -81,7 +80,6 @@ public:
 
     char* GetName();
     int GetRace();
-
 
     void SetName(char* new_name);
     void SetRace(TypeFox new_type);
