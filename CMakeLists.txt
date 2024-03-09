@@ -4,7 +4,7 @@ project(Animals)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(Animals
-        main.cpp
-        Animals.h
-        Animals.cpp
+        src/main.cpp
+        include/Animal.h
+        src/Animal.cpp
 )

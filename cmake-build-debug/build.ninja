@@ -49,17 +49,17 @@ cmake_ninja_workdir = C$:/Users/user/Desktop/Kostin_cpp/Animals/cmake-build-debu
 
 build cmake_object_order_depends_target_Animals: phony || CMakeFiles/Animals.dir
 
-build CMakeFiles/Animals.dir/main.cpp.obj: CXX_COMPILER__Animals_unscanned_Debug C$:/Users/user/Desktop/Kostin_cpp/Animals/main.cpp || cmake_object_order_depends_target_Animals
-  DEP_FILE = CMakeFiles\Animals.dir\main.cpp.obj.d
+build CMakeFiles/Animals.dir/src/main.cpp.obj: CXX_COMPILER__Animals_unscanned_Debug C$:/Users/user/Desktop/Kostin_cpp/Animals/src/main.cpp || cmake_object_order_depends_target_Animals
+  DEP_FILE = CMakeFiles\Animals.dir\src\main.cpp.obj.d
   FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Animals.dir
-  OBJECT_FILE_DIR = CMakeFiles\Animals.dir
+  OBJECT_FILE_DIR = CMakeFiles\Animals.dir\src
 
-build CMakeFiles/Animals.dir/Animals.cpp.obj: CXX_COMPILER__Animals_unscanned_Debug C$:/Users/user/Desktop/Kostin_cpp/Animals/Animals.cpp || cmake_object_order_depends_target_Animals
-  DEP_FILE = CMakeFiles\Animals.dir\Animals.cpp.obj.d
+build CMakeFiles/Animals.dir/src/Animal.cpp.obj: CXX_COMPILER__Animals_unscanned_Debug C$:/Users/user/Desktop/Kostin_cpp/Animals/src/Animal.cpp || cmake_object_order_depends_target_Animals
+  DEP_FILE = CMakeFiles\Animals.dir\src\Animal.cpp.obj.d
   FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Animals.dir
-  OBJECT_FILE_DIR = CMakeFiles\Animals.dir
+  OBJECT_FILE_DIR = CMakeFiles\Animals.dir\src
 
 
 # =============================================================================
@@ -69,7 +69,7 @@ build CMakeFiles/Animals.dir/Animals.cpp.obj: CXX_COMPILER__Animals_unscanned_De
 #############################################
 # Link the executable Animals.exe
 
-build Animals.exe: CXX_EXECUTABLE_LINKER__Animals_Debug CMakeFiles/Animals.dir/main.cpp.obj CMakeFiles/Animals.dir/Animals.cpp.obj
+build Animals.exe: CXX_EXECUTABLE_LINKER__Animals_Debug CMakeFiles/Animals.dir/src/main.cpp.obj CMakeFiles/Animals.dir/src/Animal.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Animals.dir
