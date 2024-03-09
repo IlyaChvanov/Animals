@@ -96,5 +96,5 @@ private:
     char* name = nullptr;
     TypeFox type = TypeFox::Red_Fox;
     int numberRabbitsEaten = 0;
-};;
+};
 #endif //ANIMALS_ANIMALS_H

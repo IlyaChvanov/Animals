@@ -17,9 +17,10 @@ int main()
     print_dog(first_dog);
     cout<<endl;
 
+    char moved_dog_name[] {"Bobik"};
     cout<<"moved(by = ) dog is below(changed name and breed by seter)"<<endl;
     Dog moved = std:: move(first_dog);
-    moved.SetName("Sharik");
+    moved.SetName(moved_dog_name);
     moved.SetRace(Dog::Breeds::Golden_Retriever);
     print_dog(moved);
 
@@ -28,9 +29,10 @@ int main()
     print_fox(first_fox);
     cout<<endl;
 
+    char copied_fox_name[] {"Renar"};
     Fox copied = first_fox;
     cout<<"copied(by = ) fox is below(changed name by seter)"<<endl;
-    copied.SetName("Renar");
+    copied.SetName(copied_fox_name);
     print_fox(copied);
     cout<<endl;
 
