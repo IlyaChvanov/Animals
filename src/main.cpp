@@ -20,7 +20,7 @@ int main() {
     print_dog(first_dog);
     cout << endl;
 
-    char moved_dog_name[]{"Bobik"};
+    char moved_dog_name[]{"Bobik_Moved"};
     cout << "moved(by = ) dog is below(changed name and breed by seter)" << endl;
     Dog moved = std::move(first_dog);
     moved.SetName(moved_dog_name);
