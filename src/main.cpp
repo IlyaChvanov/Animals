@@ -21,10 +21,9 @@ int main() {
     cout << endl;
 
     char moved_dog_name[]{"Bobik_Moved"};
+    char moved_dog_sex[]{"male"};
     cout << "moved(by = ) dog is below(changed name and breed by seter)" << endl;
-    Dog moved = std::move(first_dog);
-    moved.SetName(moved_dog_name);
-    moved.SetRace(Dog::Breeds::Golden_Retriever);
+    Dog moved = Dog(moved_dog_name, Dog::Breeds::Golden_Retriever, 11, moved_dog_sex, "black", 1);
     print_dog(moved);
 
     char first_fox_name[]{"Ding"};
