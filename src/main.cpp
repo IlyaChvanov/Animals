@@ -20,11 +20,9 @@ int main() {
     print_dog(first_dog);
     cout << endl;
 
-    char moved_dog_name[]{"Bobik_Moved"};
-    char moved_dog_sex[]{"male"};
-    cout << "moved(by = ) dog is below(changed name and breed by seter)" << endl;
-    Dog moved = Dog(moved_dog_name, Dog::Breeds::Golden_Retriever, 11, moved_dog_sex, "black", 1);
-    print_dog(moved);
+    cout << "dog2 created by moved dog 1" << endl;
+    Dog dog2 = Dog(std::move(first_dog));
+    print_dog(dog2);
 
     char first_fox_name[]{"Ding"};
     Fox first_fox(first_fox_name, Fox::TypeFox::Fennec_Fox, 8, sex_test, "red", 5);
@@ -33,14 +31,10 @@ int main() {
 
     char copied_fox_name[]{"Renar"};
     Fox copied = first_fox;
-    cout << "copied(by = ) fox is below(changed name by seter)" << endl;
+    cout << "fox is copied by first_fox(changed name by setter)" << endl;
     copied.SetName(copied_fox_name);
     print_fox(copied);
     cout << endl;
-
-    cout << "moved(by constructor )" << endl;
-    Fox moved_fox(std::move(copied));
-    print_fox(moved_fox);
 
     return 0;
 }
