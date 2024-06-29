@@ -2,7 +2,7 @@
 #include "string"
 #include "../include/Animal.h"
 
-using std::cout;
+using std::cout, std::endl;
 
 void print_fox(Fox &first_fox);
 
