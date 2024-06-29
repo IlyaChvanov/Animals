@@ -13,11 +13,11 @@ class Animal {
     Animal();
     Animal(float mass, char *sex_new, string &&color, int age);
     Animal(const Animal &other);
-    Animal(Animal &&other) noexcept;
+    Animal(Animal &&other);
     virtual ~Animal();
 
     Animal &operator=(const Animal &other);
-    Animal &operator=(Animal &&moved) noexcept;
+    Animal &operator=(Animal &&moved);
 
     float GetMass() const;
     char *GetSex() const;
@@ -58,10 +58,10 @@ class Dog : public Animal {
     Dog(char *name, Breeds breed, float mass, char *sex, string &&color, int age);
 
     Dog(const Dog &other);
-    Dog(Dog &&other) noexcept;
+    Dog(Dog &&other);
     ~Dog() override;
     Dog &operator=(const Dog &other);
-    Dog &operator=(Dog &&moved) noexcept;
+    Dog &operator=(Dog &&moved);
     char *GetName();
     int GetRace();
 
