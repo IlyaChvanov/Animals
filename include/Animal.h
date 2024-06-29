@@ -6,7 +6,8 @@
 
 #ifndef ANIMALS_ANIMALS_H
 #define ANIMALS_ANIMALS_H
-using namespace std;
+
+using std::string;
 
 class Animal {
  public:
@@ -73,7 +74,6 @@ class Dog : public Animal {
  private:
     Breeds breed = Breeds::German_Shepherd;
     char *name = nullptr;
-
 };
 
 class Fox : public Animal {
@@ -85,11 +85,11 @@ class Fox : public Animal {
     Fox();
     Fox(char *name, TypeFox type, float mass, char *sex, string &&color, int age);
     Fox(const Fox &other);
-    Fox(Fox &&other) noexcept;
+    Fox(Fox &&other);
     ~Fox() override;
 
     Fox &operator=(const Fox &other);
-    Fox &operator=(Fox &&moved) noexcept;
+    Fox &operator=(Fox &&moved);
 
     char *GetName();
     int GetRace();

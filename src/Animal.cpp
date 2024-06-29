@@ -5,28 +5,26 @@
 #include "cstring"
 #include "../include/Animal.h"
 
-using std::endl, std::cout;
-
 Animal::Animal() = default;
 
-Animal::Animal(float mass, char *sex_new, string &&color, int age) {
-    this->mass = mass;
+Animal::Animal(float mass, char *sex_new, string &&color, int age) :
+                mass(mass),
+                color(color),
+                age(age) {
     size_t size_of_text = strlen(sex_new) + 1;
     sex = new char[size_of_text];
     strcpy_s(this->sex, size_of_text, sex_new);
-    this->color = color;
-    this->age = age;
 }
 
 Animal::Animal(const Animal &) = default;
 
-Animal::Animal(Animal &&other) noexcept = default;
+Animal::Animal(Animal &&other)  = default;
 
 Animal::~Animal() { delete[] sex; }
 
 Animal &Animal::operator=(const Animal &other) = default;
 
-Animal &Animal::operator=(Animal &&moved) noexcept = default;
+Animal &Animal::operator=(Animal &&moved)  = default;
 
 string Animal::GetColor() { return color; }
 
@@ -50,19 +48,15 @@ void Animal::SetColor(string &&new_color) { color = new_color; }
 
 Dog::Dog() = default;
 
-Dog::Dog(char *new_name, Breeds breed, float mass, char *new_sex, string &&color, int age) {
+Dog::Dog(char *new_name, Breeds breed, float mass, char *new_sex, string &&color, int age) :
+        Animal(mass, new_sex, std::move(color), age) {
     size_t size_of_text_s = strlen(new_sex) + 1;
     sex = new char[size_of_text_s];
-    strcpy_s(this->sex, size_of_text_s, new_sex);
+    strcpy_s(sex, size_of_text_s, new_sex);
 
     size_t size_of_text = strlen(new_name) + 1;
     name = new char[size_of_text];
-    strcpy_s(this->name, size_of_text, new_name);
-
-    this->breed = breed;
-    this->mass = mass;
-    this->color = color;
-    this->age = age;
+    strcpy_s(name, size_of_text, new_name);
 }
 
 Dog::~Dog() {
@@ -72,11 +66,11 @@ Dog::~Dog() {
 
 Dog::Dog(const Dog &) = default;
 
-Dog::Dog(Dog &&other) noexcept = default;
+Dog::Dog(Dog &&other) = default;
 
 Dog &Dog::operator=(const Dog &other) = default;
 
-Dog &Dog::operator=(Dog &&moved) noexcept = default;
+Dog &Dog::operator=(Dog &&moved) = default;
 
 void Dog::SetRace(Breeds new_breed) { breed = new_breed; }
 
@@ -95,7 +89,8 @@ string Dog::WhatDoesSay() { return "AF"; }
 
 Fox::Fox() = default;
 
-Fox::Fox(char *new_name, TypeFox type, float mass, char *new_sex, string &&color, int age) {
+Fox::Fox(char *new_name, TypeFox type, float mass, char *new_sex, string &&color, int age) :
+                Animal(mass, sex, std::move(color), age) {
     size_t size_of_text_s = strlen(new_sex) + 1;
     sex = new char[size_of_text_s];
     strcpy_s(this->sex, size_of_text_s, new_sex);
@@ -103,11 +98,6 @@ Fox::Fox(char *new_name, TypeFox type, float mass, char *new_sex, string &&color
     size_t size_of_text = strlen(new_name) + 1;
     name = new char[size_of_text];
     strcpy_s(this->name, size_of_text, new_name);
-
-    this->type = type;
-    this->mass = mass;
-    this->color = color;
-    this->age = age;
 }
 
 Fox::~Fox() {
@@ -117,11 +107,11 @@ Fox::~Fox() {
 
 Fox::Fox(const Fox &) = default;
 
-Fox::Fox(Fox &&other) noexcept = default;
+Fox::Fox(Fox &&other) = default;
 
 Fox &Fox::operator=(const Fox &other) = default;
 
-Fox &Fox::operator=(Fox &&moved) noexcept = default;
+Fox &Fox::operator=(Fox &&moved) = default;
 
 void Fox::SetRace(TypeFox new_type) { type = new_type; }
 
