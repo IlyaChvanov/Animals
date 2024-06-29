@@ -5,7 +5,7 @@
 #include "cstring"
 #include "../include/Animal.h"
 
-using namespace std;
+using std::endl, std::cout;
 
 Animal::Animal() = default;
 
